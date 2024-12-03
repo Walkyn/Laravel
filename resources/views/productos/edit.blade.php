@@ -16,7 +16,7 @@
 
 
             <!-- Formulario -->
-            <form action="{{ route('productos.update', $producto->codigo) }}" method="POST">
+            <form action="{{ route('productos.update', $producto->id) }}" method="POST">
                 @csrf
                 @method('PUT')           
 

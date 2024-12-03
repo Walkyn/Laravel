@@ -20,9 +20,9 @@ class ProductoController extends Controller
         return view('productos.create');
     }
 
-    public function edit($codigo)
+    public function edit($id)
     {
-        $producto = Producto::findOrFail($codigo);
+        $producto = Producto::findOrFail($id);
         return view('productos.edit', compact('producto'));
     }
 
@@ -38,8 +38,6 @@ class ProductoController extends Controller
         ]);
 
         $producto = Producto::findOrFail($codigo);
-
-        dd($producto, $validatedData);
 
         $producto->update($validatedData);
 
